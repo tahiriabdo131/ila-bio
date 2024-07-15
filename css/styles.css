@@ -5,11 +5,12 @@
 
 :root {
   --primaryColor: #e099b4;
+  --secondaryColor: #82305b;
   --lightColor: white;
   --warning: #FF9F44;
-  /* --darkColor: #3e3f43;
-  --blackColor: #0a141d;
-  --padding: 8%; */
+  --darkgray: #6E6B7B;
+  --lightgray: #D8D6DE;
+  --darkblue: #2F3C72;
 }
   
 * {
@@ -79,7 +80,7 @@ a {
 }
 
 .product-name {
-  color: #5E5873;
+  color: var(--darkgray);
 }
 
 .product-price-rating {
@@ -120,7 +121,7 @@ a {
 }
 
 .old-price {
-  color: #2F3C72;
+  color: var(--darkblue);
   text-decoration: line-through;
 }
 
@@ -129,7 +130,7 @@ a {
 }
 
 .form-title {
-  color: #6E6B7B;
+  color: var(--darkgray);
 }
 
 .inputs-1, .inputs-2 {
@@ -146,8 +147,8 @@ input {
   padding: 12px 20px;
   font-size: 18px;
   direction: rtl;
-  border: 1px solid #D8D6DE;
-  color: #6E6B7B;
+  border: 1px solid var(--lightgray);
+  color: var(--darkgray);
   border-radius: 8px;
 }
 
@@ -202,7 +203,7 @@ input[type="number"] {
 }
 
 .advantages-title {
-  color: #82305b;
+  color: var(--secondaryColor);
   font-size: 18px;
 }
 
