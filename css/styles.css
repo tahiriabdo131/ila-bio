@@ -1,0 +1,291 @@
+@font-face {
+  font-family: "Al-Jazeera-Arabic-Bold";
+  src: url("../fonts/Al-Jazeera-Arabic-Bold.ttf");
+}
+
+:root {
+  --primaryColor: #e099b4;
+  --lightColor: white;
+  --warning: #FF9F44;
+  /* --darkColor: #3e3f43;
+  --blackColor: #0a141d;
+  --padding: 8%; */
+}
+  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+  
+html {
+  font-family: "Al-Jazeera-Arabic-Bold";
+  font-size: 16px;
+  color: var(--darkColor);
+}
+
+
+.content-footer {
+  padding: 24px 16px;
+  background-color: var(--primaryColor);
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.left, .middle, .right {
+  color: var(--lightColor);
+  text-align: right;
+  direction: rtl;
+  padding: 0 16px;
+}
+
+.left, .right {
+  flex-basis: 25%;
+}
+
+.right {
+  text-align: center;
+}
+
+.social-medias {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.middle {
+  flex: 1;
+}
+
+ul {
+  list-style-position: inside;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-details {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  gap: 10px;
+}
+
+.customer-infos {
+  flex-grow: 2;
+  text-align: right;
+}
+
+.product-name {
+  color: #5E5873;
+}
+
+.product-price-rating {
+  display: flex;
+  direction: rtl;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.product-details-price {
+  display: flex;
+  direction: rtl;
+  gap: 10px;
+  align-items: center;
+}
+
+.product-details-rating {
+  display: flex;
+  align-items: center;
+  direction: rtl;
+  gap: 10px;
+}
+
+.vertical-line {
+  border-left: 1px solid #EBE9F1;
+  height: 30px;
+}
+
+.stars {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--warning);
+}
+
+.stars span {
+  margin-right: 1px;
+}
+
+.old-price {
+  color: #2F3C72;
+  text-decoration: line-through;
+}
+
+.new-price {
+  color: var(--primaryColor);
+}
+
+.form-title {
+  color: #6E6B7B;
+}
+
+.inputs-1, .inputs-2 {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+input {
+  width: 100%;
+  min-height: 36px;
+  padding: 12px 20px;
+  font-size: 18px;
+  direction: rtl;
+  border: 1px solid #D8D6DE;
+  color: #6E6B7B;
+  border-radius: 8px;
+}
+
+input:focus {
+  border-color: var(--primaryColor);
+  outline: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.submit-button {
+  width: 100%;
+  min-height: 36px;
+  margin-top: 10px;
+  color: var(--primaryColor);
+  border: 1px solid var(--primaryColor);
+  background: var(--lightColor); 
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background: var(--primaryColor);
+  color: var(--lightColor);
+  border: none;
+}
+
+.advantages {
+  display: flex;
+  margin-top: 16px;
+  justify-content: space-between;
+  padding: 24px 16px;
+  gap: 10px;
+}
+
+.advantages-item {
+  text-align: center;
+}
+
+.advantages-img {
+  width: 90px;
+}
+
+.advantages-title {
+  color: #82305b;
+  font-size: 18px;
+}
+
+.advantages-text {
+  color: var(--primaryColor);
+  font-size: 14px;
+}
+
+.copyright {
+  background: #ffe1ed;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 24px 16px;
+  color: var(--primaryColor);
+}
+
+.copyright-text-1 {
+  flex-grow: 2;
+  text-align: right;
+}
+
+.copyright-text-2 {
+  flex-grow: 1; 
+  text-align: center;
+}
+
+/* Media Query for Small Devices */
+@media (max-width: 768px) {
+  .content-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .left, .middle, .right {
+    flex-basis: auto;
+    margin-bottom: 20px;
+  }
+  
+  .right img {
+    margin: 0 auto;
+  }
+
+  .inputs-1, .inputs-2 {
+    flex-direction: column;
+  }
+
+  .copyright {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .copyright-text-1 {
+    text-align: center;
+  }
+
+  .product-details {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .customer-infos {
+    text-align: center;
+    order: 2;
+  }
+
+  .product-price-rating {
+    flex-direction: column;
+    gap: 0;
+  }
+  .product-name, .form-title, .infos-form {
+    text-align: right;
+  }
+
+  .advantages {
+    flex-direction: column;
+  }
+
+  .advantages-item {
+    margin-bottom: 12px;
+  }
+
+  .advantages-img {
+    width: 80px;
+  }
+}
