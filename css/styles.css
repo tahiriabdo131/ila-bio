@@ -25,6 +25,10 @@ html {
   color: var(--darkColor);
 }
 
+body {
+  color: var(--primaryColor);
+}
+
 header {
   height: 60px;
   background-color: var(--primaryColor);
@@ -66,10 +70,6 @@ a {
   text-align: right;
 }
 
-.product-name {
-  color: var(--darkgray);
-}
-
 .product-price-rating {
   display: flex;
   direction: rtl;
@@ -92,7 +92,7 @@ a {
 }
 
 .vertical-line {
-  border-left: 1px solid var(--lightgray);
+  border-left: 1px solid;
   height: 30px;
 }
 
@@ -108,16 +108,7 @@ a {
 }
 
 .old-price {
-  color: var(--darkblue);
   text-decoration: line-through;
-}
-
-.new-price {
-  color: var(--primaryColor);
-}
-
-.form-title {
-  color: var(--darkgray);
 }
 
 .inputs-1, .inputs-2 {
@@ -134,13 +125,12 @@ input {
   padding: 12px 20px;
   font-size: 18px;
   direction: rtl;
-  border: 1px solid var(--lightgray);
-  color: var(--darkgray);
+  border: none;
+  border: 1px solid var(--secondaryColor);
   border-radius: 8px;
 }
 
 input:focus {
-  border-color: var(--primaryColor);
   outline: none;
 }
 
@@ -157,7 +147,6 @@ input[type="number"] {
   width: 100%;
   min-height: 36px;
   margin-top: 10px;
-  color: var(--primaryColor);
   border: 1px solid var(--primaryColor);
   background: var(--lightColor); 
   padding: 12px 20px;
@@ -166,6 +155,7 @@ input[type="number"] {
   font-weight: bold;
   cursor: pointer;
   animation: moveButton 0.5s infinite alternate;
+  color: var(--primaryColor);
 }
 
 @keyframes moveButton {
@@ -200,7 +190,6 @@ input[type="number"] {
 }
 
 .advantages-title {
-  color: var(--primaryColor);
   font-size: 18px;
 }
 
