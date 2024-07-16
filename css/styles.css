@@ -4,8 +4,8 @@
 }
 
 :root {
-  --primaryColor: #e099b4;
-  --secondaryColor: #82305b;
+  --primaryColor: #004553;
+  --secondaryColor: #CCDDDC;
   --lightColor: white;
   --warning: #FF9F44;
   --darkgray: #6E6B7B;
@@ -25,6 +25,19 @@ html {
   color: var(--darkColor);
 }
 
+header {
+  height: 60px;
+  background-color: var(--primaryColor);
+  color: var(--lightColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-img {
+  width: 100%;
+  height: calc(100vh - 60px);
+}
 
 .content-footer {
   padding: 24px 16px;
@@ -178,6 +191,16 @@ input[type="number"] {
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
+  animation: moveButton 0.5s infinite alternate;
+}
+
+@keyframes moveButton {
+  from {
+      transform: translateX(-16px);
+  }
+  to {
+      transform: translateX(16px);
+  }
 }
 
 .submit-button:hover {
@@ -203,22 +226,22 @@ input[type="number"] {
 }
 
 .advantages-title {
-  color: var(--secondaryColor);
+  color: var(--primaryColor);
   font-size: 18px;
 }
 
 .advantages-text {
-  color: var(--primaryColor);
+  color: var(--darkgray);
   font-size: 14px;
 }
 
 .copyright {
-  background: #ffe1ed;
+  background: var(--primaryColor);
   display: flex;
   justify-content: space-between;
   gap: 10px;
   padding: 24px 16px;
-  color: var(--primaryColor);
+  color: var(--lightColor);
 }
 
 .copyright-text-1 {
@@ -249,6 +272,7 @@ input[type="number"] {
 
   .inputs-1, .inputs-2 {
     flex-direction: column;
+    margin-top: 10px;
   }
 
   .copyright {
