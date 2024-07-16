@@ -39,36 +39,10 @@ header {
   height: calc(100vh - 60px);
 }
 
-.content-footer {
-  padding: 24px 16px;
-  background-color: var(--primaryColor);
-  display: flex;
-  flex-direction: row-reverse;
-}
-
-.left, .middle, .right {
-  color: var(--lightColor);
-  text-align: right;
-  direction: rtl;
-  padding: 0 16px;
-}
-
-.left, .right {
-  flex-basis: 25%;
-}
-
-.right {
-  text-align: center;
-}
-
 .social-medias {
   display: flex;
   justify-content: center;
   gap: 10px;
-}
-
-.middle {
-  flex: 1;
 }
 
 ul {
@@ -118,7 +92,7 @@ a {
 }
 
 .vertical-line {
-  border-left: 1px solid #EBE9F1;
+  border-left: 1px solid var(--lightgray);
   height: 30px;
 }
 
@@ -196,10 +170,10 @@ input[type="number"] {
 
 @keyframes moveButton {
   from {
-      transform: translateX(-16px);
+      transform: translateX(-10px);
   }
   to {
-      transform: translateX(16px);
+      transform: translateX(10px);
   }
 }
 
@@ -239,19 +213,15 @@ input[type="number"] {
   background: var(--primaryColor);
   display: flex;
   justify-content: space-between;
-  gap: 10px;
-  padding: 24px 16px;
+  padding: 24px 32px;
   color: var(--lightColor);
 }
 
-.copyright-text-1 {
-  flex-grow: 2;
-  text-align: right;
-}
-
-.copyright-text-2 {
-  flex-grow: 1; 
-  text-align: center;
+.whatsapp-icon {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 1000;
 }
 
 /* Media Query for Small Devices */
@@ -261,15 +231,11 @@ input[type="number"] {
     text-align: center;
   }
   
-  .left, .middle, .right {
+  .left, .middle {
     flex-basis: auto;
     margin-bottom: 20px;
   }
   
-  .right img {
-    margin: 0 auto;
-  }
-
   .inputs-1, .inputs-2 {
     flex-direction: column;
     margin-top: 10px;
