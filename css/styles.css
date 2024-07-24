@@ -11,6 +11,7 @@
   --darkgray: #6E6B7B;
   --lightgray: #D8D6DE;
   --darkblue: #2F3C72;
+  --darkgreen: #006C10;
 }
   
 * {
@@ -42,14 +43,72 @@ header {
   width: 100%;
   height: 500px;
   position: relative;
-  border-bottom: 2px solid var(--primaryColor);
+  display: flex;
+  justify-content: space-between;
 }
 
-.div-main img {
+.div-main-left, .div-main-right {
+  flex: 1;
+  padding: 20px;
+  color: var(--darkblue);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  direction: rtl;
+}
+
+.div-main-left--title {
+  color: var(--primaryColor);
+}
+
+.div-main-left--problem {
+  display: flex;
+  gap: 10px; 
+  align-items: center; 
+  justify-content: center;
+}
+
+.div-main-left--problem-text, .div-main-right--solution-text {
+  width: 190px;
+}
+
+.div-main-left--problem-icon {
+  margin-top: 4px;
+  color: var(--primaryColor);
+  font-size: 18px;
+}
+
+.div-main-right--title {
+  color: var(--darkgreen);
+}
+
+.div-main-right--solution {
+  display: flex; 
+  gap: 10px; 
+  align-items: center; 
+  justify-content: center;
+}
+
+.div-main-right--solution-icon {
+  margin-top: 4px; 
+  color: var(--darkgreen); 
+  font-size: 18px
+}
+
+.div-main-img {
+  width: 100%;
+  height: 100%;
+  flex: 2;
+  border-bottom: solid 2px var(--primaryColor);
+}
+
+.div-main-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  position: absolute;
 }
 
 .text-overlay {
@@ -243,6 +302,28 @@ input[type="number"] {
 
 /* Media Query for Small Devices */
 @media (max-width: 768px) {
+  .div-main {
+    height: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .div-main-left {
+    order: 2;
+  }
+
+  .div-main-right {
+    order: 2;
+  }
+
+  .div-main-img {
+    order: 1;
+  }
+
+  .text-overlay {
+    top: 25%;
+  }
+
   .content-footer {
     flex-direction: column;
     text-align: center;
