@@ -59,6 +59,10 @@ header {
   direction: rtl;
 }
 
+.div-main-right h3, .div-main-left h3 {
+  font-size: 110%;
+}
+
 .div-main-left--title {
   color: var(--primaryColor);
 }
@@ -338,6 +342,10 @@ input[type="number"] {
 
   .div-main-right {
     order: 2;
+  }
+
+  .div-main-right h3, .div-main-left h3 {
+    font-size: 95%;
   }
 
   .div-main-img {
