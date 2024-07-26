@@ -38,10 +38,10 @@ async function submitForm(event) {
             toastr.success("لقد توصلنا بطلبياتك سنتواصل معاك في أقرب وقت");
         } catch (error) {
             console.error("Error saving data:", error);
-            toastr.error("Failed to submit data");
+            toastr.error("نعتذر، المرجو المحاولة لاحقا");
         }
     } else {
-        toastr.warning("Please fill all the fields correctly.");
+        toastr.warning("المرجو التحقق من معلوماتك");
     }
 }
 
