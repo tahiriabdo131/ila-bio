@@ -23,11 +23,10 @@
 html {
   font-family: "Al-Jazeera-Arabic-Bold";
   font-size: 16px;
-  color: var(--darkColor);
 }
 
 body {
-  color: var(--darkgray);
+  color: var(--darkblue);
 }
 
 header {
@@ -105,7 +104,13 @@ header {
   border-bottom: solid 1px var(--primaryColor);
 }
 
-.div-main-img img {
+.div-main-img--mobile-image {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.div-main-img--web-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -128,7 +133,7 @@ header {
 .social-medias {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
 }
 
 ul {
@@ -174,7 +179,7 @@ a {
 }
 
 .vertical-line {
-  border-left: 1px solid;
+  border-left: 1.3px solid var(--lightgray);
   height: 30px;
 }
 
@@ -214,6 +219,10 @@ input {
   border: none;
   border: 1px solid var(--primaryColor);
   border-radius: 8px;
+}
+
+input::placeholder {
+  color: var(--darkblue);
 }
 
 input:focus {
@@ -259,9 +268,24 @@ input[type="number"] {
   border: none;
 }
 
+.advantages-parent-div-title {
+  display: flex; 
+  justify-content: center; 
+  margin-top: 15px;
+}
+
+.advantages-child-div-title {
+  border-bottom: 2px solid var(--primaryColor);  
+  display: inline-block
+}
+
+.advantages-child-div-title h3 {
+  margin-bottom: -3px;
+}
+
+
 .advantages {
   display: flex;
-  margin-top: 16px;
   justify-content: space-between;
   padding: 24px 16px;
   gap: 10px;
@@ -318,6 +342,14 @@ input[type="number"] {
 
   .div-main-img {
     order: 1;
+  }
+
+  .div-main-img--web-image {
+    display: none;
+  }
+
+  .div-main-img--mobile-image {
+    display: block;
   }
 
   .text-overlay {

@@ -59,7 +59,8 @@
         </div>
 
         <div class="div-main-img">
-            <img id="main-img" src="./images/main.jpg" alt="Main Image">
+            <img class="div-main-img--web-image" src="./images/main.jpg" alt="Main Image">
+            <img class="div-main-img--mobile-image" src="./images/main.png" alt="Main Image">
             <div class="text-overlay">
                 <p>أحصلي على الجسم الذي تحلمين به</p>
             </div>
@@ -84,12 +85,12 @@
             </div>
 
             <div class="div-main-right--solution">
-                <p class="div-main-right--solution-text">مرخص من وزارة الصحة</p>
+                <p class="div-main-right--solution-text">مرخصة من وزارة الصحة</p>
                 <i class="div-main-right--solution-icon fa-solid fa-circle-check"></i>
             </div>
 
             <div class="div-main-right--solution">
-                <p class="div-main-right--solution-text">نتائج سريعة و مضمونة</p>
+                <p class="div-main-right--solution-text">تضمن نتائج سريعة</p>
                 <i class="div-main-right--solution-icon fa-solid fa-circle-check"></i>
             </div>
 
@@ -127,13 +128,13 @@
             <p class="form-title">من أجل الطلب، الرجاء إدخال معلوماتك في الخانات أسفله</p>
             <form id="contact-form">
                 <div class="inputs-1">
-                    <input type="text" id="name" placeholder="الإسم الكامل" required>
-                    <input type="number" id="phone" placeholder="رقم الهاتف" required>
+                    <input type="text" id="name" placeholder="الإسم الكامل" required required pattern="[A-Za-z\s]+" minlength="3" title="يرجى إدخال اسم صحيح يحتوي على أحرف ومسافات فقط، وطوله لا يقل عن 3 أحرف">
+                    <input type="number" id="phone" placeholder="رقم الهاتف" required required pattern="0[1-9]\d{8}" title="يرجى إدخال رقم هاتف مغربي صحيح (يبدأ بـ 0 ويليه 9 أرقام)">
                 </div>
             
                 <div class="inputs-2">
-                    <input type="text" id="city" placeholder="المدينة" required>
-                    <input type="text" id="address" placeholder="العنوان بالكامل" required>
+                    <input type="text" id="city" placeholder="المدينة" required required pattern="[A-Za-z\s]+" title="يرجى إدخال اسم مدينة صحيح يحتوي على أحرف ومسافات فقط">
+                    <input type="text" id="address" placeholder="العنوان بالكامل">
                 </div>
             
                 <div>
@@ -145,6 +146,12 @@
             <img width="250px" src="./images/lahsa.png" alt="lahsa img" >
         </div>
     </section>
+
+    <div class="advantages-parent-div-title">
+        <div class="advantages-child-div-title">
+            <h3>مزايا التعامل معانا</h3>
+        </div>
+    </div>
 
     <section class="advantages">
         <div class="advantages-item">
@@ -193,7 +200,7 @@
                 <p>Copyright © 2024 | Powered By "ila-bio"</p>
             </div>
             <div class="copyright-text-2">
-                <p>Tous les droits sont réservés</p>
+                <p>جميع الحقوق محفوظة</p>
             </div>
         </section>
     </footer>
@@ -203,24 +210,6 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="js/contactForm.js"></script>
-    <script>
-        function updateImageSource() {
-            var img = document.getElementById('main-img');
-            if (window.innerWidth <= 768) {
-                img.src = './images/main.png';
-            } else {
-                img.src = './images/main.jpg';
-            }
-        }
-
-        // Initial check
-        updateImageSource();
-
-        // Check on resize
-        window.addEventListener('resize', updateImageSource);
-    </script>
-
-    
 </body>
 
 </html>

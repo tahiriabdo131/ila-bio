@@ -31,7 +31,9 @@ async function submitForm(event) {
     const city = getElementVal("city");
     const address = getElementVal("address");
 
-    if (validateForm(name, phone, city, address)) {
+    const isValidateForm = validateForm(name, phone, city);
+
+    if (isValidateForm) {
         try {
             await saveData(name, phone, city, address);
             document.getElementById("contact-form").reset();
@@ -40,8 +42,6 @@ async function submitForm(event) {
             console.error("Error saving data:", error);
             toastr.error("نعتذر، المرجو المحاولة لاحقا");
         }
-    } else {
-        toastr.warning("المرجو التحقق من معلوماتك");
     }
 }
 
@@ -50,13 +50,24 @@ const saveData = async (name, phone, city, address) => {
     await newContactForm.set({ name, phone, city, address });
 };
 
-const getElementVal = (id) => document.getElementById(id).value;
+const getElementVal = (id) => document.getElementById(id).value.trim();
 
-const validateForm = (name, phone, city, address) => {
-    if (!name || !phone || !city || !address) {
+const validateForm = (name, phone, city) => {
+    if (!name || !/^[A-Za-z\s]{3,}$/.test(name)) {
+        toastr.warning("يرجى إدخال اسم صحيح يحتوي على أحرف ومسافات فقط، وطوله لا يقل عن 3 أحرف");
         return false;
     }
-    // Add more validation logic if necessary
+
+    if (!phone || !/^\d{10,15}$/.test(phone)) {
+        toastr.warning("يرجى إدخال رقم هاتف مغربي صحيح (يبدأ بـ 0 ويليه 9 أرقام");
+        return false;
+    }
+
+    if (!city || !/^[A-Za-z\s]+$/.test(city)) {
+        toastr.warning("يرجى إدخال اسم مدينة صحيح يحتوي على أحرف ومسافات فقط");
+        return false;
+    }
+
     return true;
 };
 
