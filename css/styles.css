@@ -153,12 +153,28 @@ a {
   display: flex;
   justify-content: space-between;
   padding: 16px;
-  gap: 10px;
+  gap: 20px;
 }
 
 .customer-infos {
   flex-grow: 2;
   text-align: right;
+}
+
+.ingredients {
+  direction: rtl;
+  margin-top: 16px;
+}
+
+.ingredients h3 {
+  color: var(--primaryColor);
+}
+
+.product-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .product-price-rating {
@@ -221,7 +237,7 @@ input {
   font-size: 18px;
   direction: rtl;
   border: none;
-  border: 1px solid var(--primaryColor);
+  border: 1px solid var(--lightgray);
   border-radius: 8px;
 }
 
@@ -231,6 +247,10 @@ input::placeholder {
 
 input:focus {
   outline: none;
+}
+
+input:hover {
+  border: 1px solid var(--primaryColor);
 }
 
 input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
